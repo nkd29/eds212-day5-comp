@@ -2,7 +2,7 @@
 title: "summary_stats"
 author: "Nikhil D."
 date: "10/20/2021"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
