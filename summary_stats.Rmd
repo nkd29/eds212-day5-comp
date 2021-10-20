@@ -2,14 +2,16 @@
 title: "summary_stats"
 author: "Nikhil D."
 date: "10/20/2021"
-output: rmarkdown::github_document
+output:  
+  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 #just  atest commentsdlfakjsdlkj
-head(iris)
+head(mtcars)
 ```
 
 ## R Markdown
