@@ -1,5 +1,5 @@
 ---
-title: "summary_stats"
+title: "summary_stats Comp session 5A"
 author: "Nikhil D."
 date: "10/20/2021"
 output:  
@@ -7,29 +7,34 @@ output:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo=FALSE,results='hide',message=FALSE,warning=FALSE,include=TRUE}
 
-#just  atest commentsdlfakjsdlkj
-head(mtcars)
+# messing rmd code chunk options (see above)
+library(tidyverse)
+
+head(starwars)
+
+dim(starwars)
+
+# graph of character height vs mass
+ggplot(data = starwars,aes(x=height,y=mass,color=mass))+
+  geom_point(size=4,alpha=0.7)+
+  xlab('Height (cm)')+
+  ylab('Mass/Weight (kg)')+
+  ggtitle("Star Wars Character Height vs Mass/Weight")+
+  theme(plot.title = element_text(hjust = 0.5))
+
 ```
 
-## R Markdown
+```{r, echo=TRUE,results='hide',message=FALSE,warning=FALSE,include=TRUE}
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# histogram of character heights
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(color = "red", fill = "purple")+
+  xlab('Height (cm)')+
+  ylab('Count')+
+  ggtitle("Star Wars Character Heights (cm)")+
+  theme(plot.title = element_text(hjust = 0.5))
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
